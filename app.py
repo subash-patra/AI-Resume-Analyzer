@@ -1,12 +1,7 @@
-print("AI Resume Analyzer")
+from src.pdf_reader import extract_text_from_pdf
 from src.matcher import calculate_similarity
 
-resume = """
-Python
-SQL
-Pandas
-Machine Learning
-"""
+resume = extract_text_from_pdf("data/resume.pdf")
 
 job_description = """
 Python
@@ -17,4 +12,9 @@ Machine Learning
 
 score = calculate_similarity(resume, job_description)
 
-print(f"Resume Match Score: {score:.2%}")
+print("Extracted Resume:\n")
+print(resume)
+
+print("\n--------------------------")
+
+print(f"\nResume Match Score: {score:.2%}")
