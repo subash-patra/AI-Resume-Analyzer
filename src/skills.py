@@ -42,7 +42,7 @@ def clean_text(text):
     return text
 
 
-def extract_skills(text, SKILLS):
+def extract_skills(text):
     """
     Improved skill extraction using cleaned text
     """
